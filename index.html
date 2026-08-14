@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+  <title>Happy Independence Day - Khadija Tul Kubra Girls High School</title>
+
+  <!-- ═══ SOCIAL MEDIA PREVIEW ═══ -->
+  <meta property="og:title" content="Happy Independence Day - Khadija Tul Kubra Girls High School 🇵🇰" />
+  <meta property="og:description" content="Celebrate 14th August with pride! Enter your name to get a personal wish. Pakistan Zindabad!" />
+  <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Flag_of_Pakistan.svg/1200px-Flag_of_Pakistan.svg.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <!-- 👇 REPLACE THIS with your actual GitHub Pages URL -->
+  <meta property="og:url" content="https://your-username.github.io/your-repo-name/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── RESET & BASE ── */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      background: #f0f7f0;
+      background: linear-gradient(145deg, #e6f0e6 0%, #fafffa 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 12px;
+      margin: 0;
+    }
+
+    /* ── PAGE CONTAINER ── */
+    .container {
+      max-width: 1000px;
+      width: 100%;
+      margin: 0 auto;
+      position: relative;
+      min-height: 500px;
+    }
+
+    /* ── PAGE SWITCHING ── */
+    .page {
+      display: none;
+      animation: fadeSlide 0.5s ease forwards;
+    }
+    .page.active {
+      display: block;
+    }
+    @keyframes fadeSlide {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ═══ PAGE 1: LANDING / WISH PAGE (with background image) ═══ */
+    #page-landing {
+      background-image: url('images/1.jpg');
+      background-size: cover;
+      background-position: center;
+      border-radius: 48px;
+      padding: 28px 20px 36px;
+      box-shadow: 0 30px 80px rgba(1, 65, 28, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      position: relative;
+      z-index: 0;
+    }
+    #page-landing::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(255, 255, 255, 0.82);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 48px;
+      z-index: -1;
+    }
+
+    /* ═══ PAGE 2: PERSONAL GREETING (with its own background image) ═══ */
+    #page-greeting {
+      background-image: url('images/2.jpg');
+      background-size: cover;
+      background-position: center;
+      border-radius: 48px;
+      padding: 28px 20px 36px;
+      box-shadow: 0 30px 80px rgba(1, 65, 28, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      position: relative;
+      z-index: 0;
+      min-height: 500px;
+    }
+    #page-greeting::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 48px;
+      z-index: -1;
+    }
+
+    /* ── FLAG RIBBON ── */
+    .flag-ribbon {
+      display: flex;
+      height: 6px;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      position: relative;
+      z-index: 2;
+    }
+    .flag-ribbon .green { flex: 3; background: #01411c; }
+    .flag-ribbon .white { flex: 1; background: #ffffff; }
+    .flag-ribbon .green2 { flex: 3; background: #01411c; }
+
+    /* ── SCHOOL HEADER ── */
+    .school-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 2;
+    }
+    .logo-img {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 6px 20px rgba(1, 65, 28, 0.3);
+      border: 3px solid #0a2b5c;
+      background: #ffffff;
+      flex-shrink: 0;
+    }
+    .school-name h1 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: 1.5rem;
+      color: #01411c;
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+    }
+    .school-name .tagline {
+      font-weight: 600;
+      color: #0a7a3a;
+      background: rgba(1, 65, 28, 0.06);
+      padding: 3px 14px;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      display: inline-block;
+      letter-spacing: 0.5px;
+    }
+
+    /* ── FLAG VIDEO (replaces the static animated flag) ── */
+    .flag-video-wrapper {
+      display: flex;
+      justify-content: center;
+      margin: 10px 0 14px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(1, 65, 28, 0.25);
+      background: #01411c;
+      position: relative;
+      z-index: 2;
+      aspect-ratio: 16 / 9;
+      width: 100%;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .flag-video-wrapper video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ── CENTRAL WISH (in the middle) ── */
+    .hero-wish {
+      text-align: center;
+      padding: 16px 10px 8px;
+      margin: 4px 0 8px;
+      animation: floatGlow 3s ease-in-out infinite alternate;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-wish h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      font-weight: 900;
+      color: #01411c;
+      text-shadow: 0 0 20px rgba(10, 43, 92, 0.25), 0 4px 20px rgba(1, 65, 28, 0.10);
+      line-height: 1.2;
+      letter-spacing: 1px;
+    }
+    .hero-wish h1 .dark-blue {
+      color: #0a2b5c;
+      text-shadow: 0 0 30px rgba(10, 43, 92, 0.35);
+    }
+    .hero-wish .sub-wish {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #0a5e2a;
+      background: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(4px);
+      display: inline-block;
+      padding: 6px 24px;
+      border-radius: 60px;
+      margin-top: 6px;
+      border: 1px solid rgba(1, 65, 28, 0.06);
+    }
+    @keyframes floatGlow {
+      0% { transform: translateY(0px) scale(1); }
+      100% { transform: translateY(-6px) scale(1.01); }
+    }
+
+    /* ── QUOTES SECTION ── */
+    .quotes-section {
+      background: rgba(1, 65, 28, 0.04);
+      border-radius: 32px;
+      padding: 14px 18px;
+      margin: 12px 0 18px;
+      border-left: 4px solid #01411c;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+    .quotes-section blockquote {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #01411c;
+      line-height: 1.4;
+    }
+    .quotes-section .author {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: 0.75rem;
+      color: #0a7a3a;
+      margin-top: 4px;
+      letter-spacing: 1px;
+    }
+
+    /* ── CAROUSEL ── */
+    .carousel-wrapper {
+      position: relative;
+      margin: 18px 0 12px;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(1, 65, 28, 0.08);
+      background: #fafffa;
+      border: 1px solid rgba(1, 65, 28, 0.06);
+      position: relative;
+      z-index: 2;
+    }
+    .carousel-slide {
+      display: flex;
+      transition: transform 0.6s ease;
+      background: #fafffa;
+    }
+    .carousel-slide img {
+      width: 100%;
+      height: 220px;
+      object-fit: contain;
+      flex-shrink: 0;
+      display: block;
+      background: #fafffa;
+    }
+    .carousel-controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 14px;
+      padding: 10px 0 4px;
+      position: relative;
+      z-index: 2;
+    }
+    .carousel-controls button {
+      background: #01411c;
+      border: none;
+      color: white;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: 0.25s ease;
+      box-shadow: 0 4px 12px rgba(1, 65, 28, 0.2);
+      font-weight: 700;
+      touch-action: manipulation;
+    }
+    .carousel-controls button:hover {
+      transform: scale(1.08);
+      background: #0a7a3a;
+    }
+    .carousel-controls button:active {
+      transform: scale(0.92);
+    }
+    .carousel-dots {
+      display: flex;
+      gap: 8px;
+    }
+    .carousel-dots span {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #c0d6c0;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .carousel-dots span.active {
+      background: #01411c;
+      transform: scale(1.2);
+    }
+
+    /* ── VIDEO SECTION ── */
+    .video-section {
+      margin: 16px 0 12px;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(1, 65, 28, 0.08);
+      background: #fafffa;
+      border: 1px solid rgba(1, 65, 28, 0.06);
+      padding: 10px;
+      position: relative;
+      z-index: 2;
+    }
+    .video-section h3 {
+      font-family: 'Playfair Display', serif;
+      color: #01411c;
+      text-align: center;
+      margin-bottom: 8px;
+      font-size: 1.1rem;
+    }
+    .video-wrapper {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      background: #0b2e0b;
+    }
+    .video-wrapper video {
+      width: 100%;
+      display: block;
+      max-height: 360px;
+      background: #0b2e0b;
+    }
+
+    /* ─── NAME ENTRY (EMPHASIZED) ─── */
+    .input-area {
+      margin: 24px 0 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      position: relative;
+      z-index: 2;
+      padding: 18px 20px 20px;
+      border-radius: 32px;
+      background: rgba(1, 65, 28, 0.04);
+      border: 2px solid rgba(10, 43, 92, 0.15);
+      box-shadow: 0 0 30px rgba(10, 43, 92, 0.08), inset 0 0 60px rgba(10, 43, 92, 0.02);
+      animation: inputPulse 3s ease-in-out infinite;
+      backdrop-filter: blur(4px);
+    }
+    @keyframes inputPulse {
+      0% { border-color: rgba(10, 43, 92, 0.15); box-shadow: 0 0 20px rgba(10, 43, 92, 0.06); }
+      50% { border-color: rgba(10, 43, 92, 0.35); box-shadow: 0 0 40px rgba(10, 43, 92, 0.15); }
+      100% { border-color: rgba(10, 43, 92, 0.15); box-shadow: 0 0 20px rgba(10, 43, 92, 0.06); }
+    }
+    .input-area .input-icon {
+      font-size: 1.6rem;
+      display: block;
+      margin-bottom: 2px;
+    }
+    .input-area label {
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: #0a2b5c;
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+    .input-area label span {
+      background: rgba(10, 43, 92, 0.08);
+      padding: 2px 12px;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #0a5e2a;
+      display: inline-block;
+      margin-top: 4px;
+    }
+    .input-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      width: 100%;
+      max-width: 500px;
+    }
+    .input-row input {
+      flex: 1 1 200px;
+      padding: 14px 22px;
+      border: 2px solid #c0d6c0;
+      border-radius: 50px;
+      font-size: 1.05rem;
+      background: rgba(255, 255, 255, 0.85);
+      outline: none;
+      color: #01411c;
+      font-weight: 600;
+      transition: 0.3s;
+      -webkit-appearance: none;
+      appearance: none;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    }
+    .input-row input:focus {
+      border-color: #0a2b5c;
+      box-shadow: 0 0 0 4px rgba(10, 43, 92, 0.15), 0 4px 20px rgba(0, 0, 0, 0.06);
+      background: white;
+      transform: scale(1.01);
+    }
+    .input-row input::placeholder {
+      color: #9ab09a;
+      font-weight: 400;
+    }
+    .input-row button {
+      padding: 14px 40px;
+      border: none;
+      border-radius: 50px;
+      background: linear-gradient(135deg, #0a2b5c, #1a4a7a);
+      color: white;
+      font-weight: 700;
+      font-size: 1.05rem;
+      cursor: pointer;
+      transition: 0.25s;
+      box-shadow: 0 6px 24px rgba(10, 43, 92, 0.3);
+      font-family: 'Inter', sans-serif;
+      touch-action: manipulation;
+      white-space: nowrap;
+      letter-spacing: 0.5px;
+    }
+    .input-row button:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 10px 32px rgba(10, 43, 92, 0.4);
+      background: linear-gradient(135deg, #0a2b5c, #0a3a6a);
+    }
+    .input-row button:active {
+      transform: scale(0.96);
+    }
+    .input-hint {
+      font-size: 0.75rem;
+      color: #0a5e2a;
+      font-weight: 500;
+      opacity: 0.7;
+      margin-top: 2px;
+      letter-spacing: 0.3px;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      margin-top: 22px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(1, 65, 28, 0.08);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.7rem;
+      color: #0a5e2a;
+      font-weight: 500;
+      gap: 8px;
+      position: relative;
+      z-index: 2;
+    }
+    .footer .flag-mini {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+    .footer .flag-mini .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+    .footer .flag-mini .dot.g { background: #01411c; }
+    .footer .flag-mini .dot.w { background: white; border: 1px solid #ccc; }
+
+    /* ═══ GREETING PAGE CONTENT ═══ */
+    .greeting-page-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px 10px;
+      min-height: 420px;
+      position: relative;
+      z-index: 2;
+    }
+    .greeting-page-content .big-icon {
+      font-size: 3.8rem;
+      margin-bottom: 8px;
+      line-height: 1;
+    }
+    .greeting-page-content h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: #01411c;
+      margin-bottom: 6px;
+    }
+    .greeting-page-content .greeting-name {
+      color: #0a2b5c;
+      background: rgba(10, 43, 92, 0.10);
+      padding: 0 16px;
+      border-radius: 60px;
+      display: inline-block;
+    }
+    .greeting-page-content .greeting-quote {
+      background: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(4px);
+      border-radius: 32px;
+      padding: 24px 20px;
+      margin: 16px 0 24px;
+      max-width: 680px;
+      border: 1px solid rgba(1, 65, 28, 0.06);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    }
+    .greeting-page-content .greeting-quote blockquote {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #01411c;
+      line-height: 1.4;
+    }
+    .greeting-page-content .greeting-quote .quote-author {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: 0.9rem;
+      color: #0a7a3a;
+      margin-top: 6px;
+      display: block;
+      letter-spacing: 1px;
+    }
+    .greeting-page-content .back-btn {
+      padding: 12px 40px;
+      border: 2px solid #0a2b5c;
+      background: rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(4px);
+      color: #0a2b5c;
+      font-weight: 700;
+      font-size: 0.95rem;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      font-family: 'Inter', sans-serif;
+      margin-top: 8px;
+      touch-action: manipulation;
+    }
+    .greeting-page-content .back-btn:hover {
+      background: #0a2b5c;
+      color: white;
+      box-shadow: 0 6px 20px rgba(10, 43, 92, 0.3);
+      transform: scale(1.02);
+    }
+    .greeting-page-content .back-btn:active {
+      transform: scale(0.96);
+    }
+
+    /* ── RESPONSIVE TWEAKS ── */
+    @media (max-width: 640px) {
+      #page-landing, #page-greeting {
+        padding: 20px 14px 28px;
+        border-radius: 32px;
+      }
+      .school-name h1 { font-size: 1.2rem; }
+      .logo-img { width: 60px; height: 60px; }
+      .hero-wish h1 { font-size: 1.8rem; }
+      .hero-wish .sub-wish { font-size: 0.85rem; padding: 4px 16px; }
+      .quotes-section blockquote { font-size: 0.95rem; }
+      .carousel-slide img { height: 160px; }
+      .video-wrapper video { max-height: 240px; }
+      .greeting-page-content h2 { font-size: 1.8rem; }
+      .greeting-page-content .greeting-quote blockquote { font-size: 1.2rem; }
+      .input-area { padding: 14px 14px 16px; }
+      .input-row input { flex: 1 1 140px; padding: 12px 16px; font-size: 0.95rem; }
+      .input-row button { padding: 12px 28px; font-size: 0.95rem; }
+      .flag-video-wrapper { max-width: 100%; }
+      .footer { font-size: 0.65rem; }
+    }
+    @media (max-width: 400px) {
+      .school-header { gap: 10px; }
+      .school-name h1 { font-size: 1rem; }
+      .logo-img { width: 50px; height: 50px; }
+      .hero-wish h1 { font-size: 1.4rem; }
+      .carousel-slide img { height: 130px; }
+      .input-area label { font-size: 0.9rem; }
+    }
+    @media (min-width: 768px) {
+      .carousel-slide img { height: 320px; }
+      .video-wrapper video { max-height: 440px; }
+    }
+
+    /* ─── CONFETTI / FLOATING PARTICLES ─── */
+    #confetti-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+      overflow: hidden;
+    }
+    .confetti-piece {
+      position: absolute;
+      top: -20px;
+      width: 10px;
+      height: 10px;
+      opacity: 0.7;
+      border-radius: 2px;
+      animation: fall linear infinite;
+    }
+    .confetti-piece:nth-child(odd) {
+      border-radius: 50%;
+    }
+    @keyframes fall {
+      0% { transform: translateY(-10vh) rotate(0deg); opacity: 0.9; }
+      100% { transform: translateY(110vh) rotate(720deg); opacity: 0.2; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── CONFETTI LAYER ─── -->
+<div id="confetti-container"></div>
+
+<div class="container">
+
+  <!-- ═══ PAGE 1: LANDING / WISH PAGE ═══ -->
+  <div id="page-landing" class="page active">
+    <!-- Flag ribbon -->
+    <div class="flag-ribbon">
+      <div class="green"></div>
+      <div class="white"></div>
+      <div class="green2"></div>
+    </div>
+
+    <!-- School header -->
+    <div class="school-header">
+      <img src="images/logo2.png" alt="School Logo" class="logo-img" />
+      <div class="school-name">
+        <h1>🏛️ Khadija Tul Kubra<br />Girls High School</h1>
+        <span class="tagline">✦ Empowering Minds, Building Futures ✦</span>
+      </div>
+    </div>
+
+    <!-- ═══ PAKISTAN FLAG VIDEO (replaces the static animated flag) ═══ -->
+    <div class="flag-video-wrapper">
+      <video autoplay muted loop playsinline>
+        <!-- 👇 Make sure your flag video is named 'pakistan-flag.mp4' inside the 'images/' folder -->
+        <source src="images/pakistan-flag.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <!-- Central Wish -->
+    <div class="hero-wish">
+      <h1>
+        🇵🇰 Happy <span class="dark-blue">Independence</span> Day! 🇵🇰
+      </h1>
+      <div class="sub-wish">✨ May your heart always beat for Pakistan ✨</div>
+    </div>
+
+    <!-- Quotes -->
+    <div class="quotes-section">
+      <blockquote>
+        “Unity, Faith, Discipline - the guiding light of our nation.”
+        <span class="author"> Quaid‑e‑Azam Muhammad Ali Jinnah</span>
+      </blockquote>
+    </div>
+
+    <!-- CAROUSEL -->
+    <div class="carousel-wrapper">
+      <div class="carousel-slide" id="carouselSlide">
+        <img src="images/1.jpg" alt="School image 1" />
+        <img src="images/2.jpg" alt="School image 2" />
+        <img src="images/3.jpg" alt="School image 3" />
+        <img src="images/4.jpg" alt="School image 4" />
+        <img src="images/5.jpg" alt="School image 5" />
+        <img src="images/7.jpeg" alt="School image 6" />
+        <img src="images/8.jpeg" alt="School image 7" />
+        <img src="images/9.jpg" alt="School image 8" />
+      </div>
+    </div>
+    <div class="carousel-controls">
+      <button id="prevBtn">‹</button>
+      <div class="carousel-dots" id="dotsContainer"></div>
+      <button id="nextBtn">›</button>
+    </div>
+
+    <!-- VIDEO -->
+    <div class="video-section">
+      <h3>📹 School Memories & Background Music</h3>
+      <div class="video-wrapper">
+        <video id="bgVideo" autoplay loop playsinline preload="metadata">
+          <source src="WhatsApp%20Video%202024-08-14%20at%208.25.55%20PM.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+
+    <!-- ═══ NAME ENTRY – EMPHASIZED ═══ -->
+    <div class="input-area">
+      <div class="input-icon">💚</div>
+      <label for="nameInput">
+        ✨ Enter your name to receive a personal Independence Day wish ✨
+      </label>
+      <div class="input-row">
+        <input type="text" id="nameInput" placeholder="Type your name..." maxlength="40" autocomplete="off" />
+        <button id="greetBtn">🎉 Get Wish</button>
+      </div>
+      <div class="input-hint">⬆️ Press Enter or click the button</div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <span>🇵🇰 14<sup>th</sup> August 2026</span>
+      <div class="flag-mini">
+        <span class="dot g"></span>
+        <span class="dot w"></span>
+        <span class="dot g"></span>
+        &nbsp; Pakistan Zindabad
+      </div>
+      <span>🎇 with pride &amp; love</span>
+    </div>
+  </div>
+
+  <!-- ═══ PAGE 2: PERSONAL GREETING (with its own background image) ═══ -->
+  <div id="page-greeting" class="page">
+    <div class="greeting-page-content">
+      <div class="big-icon">🤍پاکستان زندہ باد💚💚</div>
+      <h2>
+        Hello, <span class="greeting-name" id="displayedName">Guest</span>!
+      </h2>
+      <div class="greeting-quote">
+        <blockquote>
+          “Pakistan is not just a piece of land; it is a dream, a promise, and a proud identity for millions.”
+          <span class="quote-author"> Inspired by the spirit of 14th August</span>
+        </blockquote>
+      </div>
+      <p style="color: #0a5e2a; font-weight: 500; max-width: 480px; margin-bottom: 10px;">
+        May your life shine as bright as the star on our flag. Pakistan Zindabad!
+      </p>
+      <button class="back-btn" id="backBtn">← Go Back</button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  // ─── CONFETTI GENERATOR (Blue & Gold Background Animation) ───
+  (function createConfetti() {
+    const container = document.getElementById('confetti-container');
+    const colors = ['#01411c', '#ffffff', '#0a2b5c', '#ffd700', '#b8860b', '#0a7a3a'];
+
+    for (let i = 0; i < 80; i++) {
+      const piece = document.createElement('div');
+      piece.className = 'confetti-piece';
+      const size = Math.random() * 8 + 4;
+      piece.style.width = size + 'px';
+      piece.style.height = size + 'px';
+      piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+      piece.style.left = Math.random() * 100 + '%';
+      piece.style.animationDuration = (Math.random() * 8 + 6) + 's';
+      piece.style.animationDelay = (Math.random() * 10) + 's';
+      piece.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+      piece.style.opacity = Math.random() * 0.5 + 0.3;
+      container.appendChild(piece);
+    }
+  })();
+
+  // ─── CAROUSEL LOGIC ───
+  const slide = document.getElementById('carouselSlide');
+  const images = slide.querySelectorAll('img');
+  const total = images.length;
+  let currentIndex = 0;
+  let autoInterval;
+
+  const dotsContainer = document.getElementById('dotsContainer');
+  for (let i = 0; i < total; i++) {
+    const dot = document.createElement('span');
+    dot.dataset.index = i;
+    if (i === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => goTo(i));
+    dotsContainer.appendChild(dot);
+  }
+  const dots = dotsContainer.querySelectorAll('span');
+
+  function updateSlide(index) {
+    if (index < 0) index = total - 1;
+    if (index >= total) index = 0;
+    currentIndex = index;
+    slide.style.transform = `translateX(-${currentIndex * 100}%)`;
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === currentIndex);
+    });
+  }
+
+  function goTo(index) {
+    clearInterval(autoInterval);
+    updateSlide(index);
+    startAutoSlide();
+  }
+
+  function nextSlide() { goTo(currentIndex + 1); }
+  function prevSlide() { goTo(currentIndex - 1); }
+
+  document.getElementById('nextBtn').addEventListener('click', nextSlide);
+  document.getElementById('prevBtn').addEventListener('click', prevSlide);
+
+  function startAutoSlide() {
+    autoInterval = setInterval(nextSlide, 4000);
+  }
+  startAutoSlide();
+
+  const carouselWrapper = document.querySelector('.carousel-wrapper');
+  carouselWrapper.addEventListener('mouseenter', () => clearInterval(autoInterval));
+  carouselWrapper.addEventListener('mouseleave', startAutoSlide);
+
+  // ─── VIDEO AUTOPLAY ───
+  const video = document.getElementById('bgVideo');
+  video.play().catch(() => {
+    const wrapper = video.closest('.video-wrapper');
+    wrapper.style.cursor = 'pointer';
+    wrapper.addEventListener('click', function playOnce() {
+      video.play().catch(() => {});
+      wrapper.style.cursor = 'default';
+      wrapper.removeEventListener('click', playOnce);
+    });
+  });
+
+  // ─── PAGE SWITCHING ───
+  const nameInput = document.getElementById('nameInput');
+  const greetBtn = document.getElementById('greetBtn');
+  const backBtn = document.getElementById('backBtn');
+  const displayedName = document.getElementById('displayedName');
+
+  function showPage(pageId) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById(pageId).classList.add('active');
+  }
+
+  function goToGreeting() {
+    const name = nameInput.value.trim();
+    if (!name) {
+      alert('Please enter your name first! ✨');
+      return;
+    }
+    displayedName.textContent = name;
+    showPage('page-greeting');
+  }
+
+  function goToLanding() {
+    showPage('page-landing');
+    nameInput.focus();
+  }
+
+  greetBtn.addEventListener('click', goToGreeting);
+  nameInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      goToGreeting();
+    }
+  });
+  backBtn.addEventListener('click', goToLanding);
+
+  window.addEventListener('load', () => {
+    nameInput.focus();
+  });
+</script>
+</body>
+</html>
