@@ -11,7 +11,6 @@
   <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Flag_of_Pakistan.svg/1200px-Flag_of_Pakistan.svg.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <!-- 👇 REPLACE THIS with your actual GitHub Pages URL -->
   <meta property="og:url" content="https://your-username.github.io/your-repo-name/" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -21,11 +20,7 @@
 
   <style>
     /* ── RESET & BASE ── */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Inter', sans-serif;
       min-height: 100vh;
@@ -39,28 +34,14 @@
     }
 
     /* ── PAGE CONTAINER ── */
-    .container {
-      max-width: 1000px;
-      width: 100%;
-      margin: 0 auto;
-      position: relative;
-      min-height: 500px;
-    }
+    .container { max-width: 1000px; width: 100%; margin: 0 auto; position: relative; min-height: 500px; }
 
     /* ── PAGE SWITCHING ── */
-    .page {
-      display: none;
-      animation: fadeSlide 0.5s ease forwards;
-    }
-    .page.active {
-      display: block;
-    }
-    @keyframes fadeSlide {
-      0% { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
+    .page { display: none; animation: fadeSlide 0.5s ease forwards; }
+    .page.active { display: block; }
+    @keyframes fadeSlide { 0% { opacity: 0; transform: translateY(20px); } 100% { opacity: 1; transform: translateY(0); } }
 
-    /* ═══ PAGE 1: LANDING / WISH PAGE (with background image) ═══ */
+    /* ═══ PAGE 1: LANDING / WISH PAGE ═══ */
     #page-landing {
       background-image: url('images/1.jpg');
       background-size: cover;
@@ -75,10 +56,7 @@
     #page-landing::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
+      top: 0; left: 0; right: 0; bottom: 0;
       background: rgba(255, 255, 255, 0.82);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
@@ -86,7 +64,7 @@
       z-index: -1;
     }
 
-    /* ═══ PAGE 2: PERSONAL GREETING (with its own background image) ═══ */
+    /* ═══ PAGE 2: PERSONAL GREETING ═══ */
     #page-greeting {
       background-image: url('images/2.jpg');
       background-size: cover;
@@ -102,10 +80,7 @@
     #page-greeting::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
+      top: 0; left: 0; right: 0; bottom: 0;
       background: rgba(255, 255, 255, 0.85);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
@@ -168,31 +143,24 @@
       letter-spacing: 0.5px;
     }
 
-    /* ── FLAG VIDEO (replaces the static animated flag) ── */
-    .flag-video-wrapper {
+    /* ── STATIC FLAG IMAGE (replaces animated flag) ── */
+    .flag-image-wrapper {
       display: flex;
       justify-content: center;
       margin: 10px 0 14px;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 6px 18px rgba(1, 65, 28, 0.25);
-      background: #01411c;
       position: relative;
       z-index: 2;
-      aspect-ratio: 16 / 9;
-      width: 100%;
-      max-width: 500px;
-      margin-left: auto;
-      margin-right: auto;
     }
-    .flag-video-wrapper video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    .flag-image-wrapper img {
+      width: 160px;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 6px 18px rgba(1, 65, 28, 0.25);
+      border: 2px solid #e0e0e0;
       display: block;
     }
 
-    /* ── CENTRAL WISH (in the middle) ── */
+    /* ── CENTRAL WISH ── */
     .hero-wish {
       text-align: center;
       padding: 16px 10px 8px;
@@ -210,10 +178,7 @@
       line-height: 1.2;
       letter-spacing: 1px;
     }
-    .hero-wish h1 .dark-blue {
-      color: #0a2b5c;
-      text-shadow: 0 0 30px rgba(10, 43, 92, 0.35);
-    }
+    .hero-wish h1 .dark-blue { color: #0a2b5c; text-shadow: 0 0 30px rgba(10, 43, 92, 0.35); }
     .hero-wish .sub-wish {
       font-size: 1.05rem;
       font-weight: 600;
@@ -307,17 +272,9 @@
       font-weight: 700;
       touch-action: manipulation;
     }
-    .carousel-controls button:hover {
-      transform: scale(1.08);
-      background: #0a7a3a;
-    }
-    .carousel-controls button:active {
-      transform: scale(0.92);
-    }
-    .carousel-dots {
-      display: flex;
-      gap: 8px;
-    }
+    .carousel-controls button:hover { transform: scale(1.08); background: #0a7a3a; }
+    .carousel-controls button:active { transform: scale(0.92); }
+    .carousel-dots { display: flex; gap: 8px; }
     .carousel-dots span {
       display: inline-block;
       width: 10px;
@@ -327,12 +284,9 @@
       cursor: pointer;
       transition: 0.2s;
     }
-    .carousel-dots span.active {
-      background: #01411c;
-      transform: scale(1.2);
-    }
+    .carousel-dots span.active { background: #01411c; transform: scale(1.2); }
 
-    /* ── VIDEO SECTION ── */
+    /* ── VIDEO SECTION (your school memories video) ── */
     .video-section {
       margin: 16px 0 12px;
       border-radius: 24px;
@@ -344,25 +298,9 @@
       position: relative;
       z-index: 2;
     }
-    .video-section h3 {
-      font-family: 'Playfair Display', serif;
-      color: #01411c;
-      text-align: center;
-      margin-bottom: 8px;
-      font-size: 1.1rem;
-    }
-    .video-wrapper {
-      position: relative;
-      border-radius: 18px;
-      overflow: hidden;
-      background: #0b2e0b;
-    }
-    .video-wrapper video {
-      width: 100%;
-      display: block;
-      max-height: 360px;
-      background: #0b2e0b;
-    }
+    .video-section h3 { font-family: 'Playfair Display', serif; color: #01411c; text-align: center; margin-bottom: 8px; font-size: 1.1rem; }
+    .video-wrapper { position: relative; border-radius: 18px; overflow: hidden; background: #0b2e0b; }
+    .video-wrapper video { width: 100%; display: block; max-height: 360px; background: #0b2e0b; }
 
     /* ─── NAME ENTRY (EMPHASIZED) ─── */
     .input-area {
@@ -386,11 +324,7 @@
       50% { border-color: rgba(10, 43, 92, 0.35); box-shadow: 0 0 40px rgba(10, 43, 92, 0.15); }
       100% { border-color: rgba(10, 43, 92, 0.15); box-shadow: 0 0 20px rgba(10, 43, 92, 0.06); }
     }
-    .input-area .input-icon {
-      font-size: 1.6rem;
-      display: block;
-      margin-bottom: 2px;
-    }
+    .input-area .input-icon { font-size: 1.6rem; display: block; margin-bottom: 2px; }
     .input-area label {
       font-weight: 800;
       font-size: 1.1rem;
@@ -437,10 +371,7 @@
       background: white;
       transform: scale(1.01);
     }
-    .input-row input::placeholder {
-      color: #9ab09a;
-      font-weight: 400;
-    }
+    .input-row input::placeholder { color: #9ab09a; font-weight: 400; }
     .input-row button {
       padding: 14px 40px;
       border: none;
@@ -462,9 +393,7 @@
       box-shadow: 0 10px 32px rgba(10, 43, 92, 0.4);
       background: linear-gradient(135deg, #0a2b5c, #0a3a6a);
     }
-    .input-row button:active {
-      transform: scale(0.96);
-    }
+    .input-row button:active { transform: scale(0.96); }
     .input-hint {
       font-size: 0.75rem;
       color: #0a5e2a;
@@ -490,16 +419,8 @@
       position: relative;
       z-index: 2;
     }
-    .footer .flag-mini {
-      display: flex;
-      gap: 6px;
-      align-items: center;
-    }
-    .footer .flag-mini .dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-    }
+    .footer .flag-mini { display: flex; gap: 6px; align-items: center; }
+    .footer .flag-mini .dot { width: 12px; height: 12px; border-radius: 50%; }
     .footer .flag-mini .dot.g { background: #01411c; }
     .footer .flag-mini .dot.w { background: white; border: 1px solid #ccc; }
 
@@ -515,11 +436,7 @@
       position: relative;
       z-index: 2;
     }
-    .greeting-page-content .big-icon {
-      font-size: 3.8rem;
-      margin-bottom: 8px;
-      line-height: 1;
-    }
+    .greeting-page-content .big-icon { font-size: 3.8rem; margin-bottom: 8px; line-height: 1; }
     .greeting-page-content h2 {
       font-family: 'Playfair Display', serif;
       font-size: 2.2rem;
@@ -580,16 +497,11 @@
       box-shadow: 0 6px 20px rgba(10, 43, 92, 0.3);
       transform: scale(1.02);
     }
-    .greeting-page-content .back-btn:active {
-      transform: scale(0.96);
-    }
+    .greeting-page-content .back-btn:active { transform: scale(0.96); }
 
-    /* ── RESPONSIVE TWEAKS ── */
+    /* ── RESPONSIVE ── */
     @media (max-width: 640px) {
-      #page-landing, #page-greeting {
-        padding: 20px 14px 28px;
-        border-radius: 32px;
-      }
+      #page-landing, #page-greeting { padding: 20px 14px 28px; border-radius: 32px; }
       .school-name h1 { font-size: 1.2rem; }
       .logo-img { width: 60px; height: 60px; }
       .hero-wish h1 { font-size: 1.8rem; }
@@ -602,7 +514,7 @@
       .input-area { padding: 14px 14px 16px; }
       .input-row input { flex: 1 1 140px; padding: 12px 16px; font-size: 0.95rem; }
       .input-row button { padding: 12px 28px; font-size: 0.95rem; }
-      .flag-video-wrapper { max-width: 100%; }
+      .flag-image-wrapper img { width: 120px; }
       .footer { font-size: 0.65rem; }
     }
     @media (max-width: 400px) {
@@ -611,6 +523,7 @@
       .logo-img { width: 50px; height: 50px; }
       .hero-wish h1 { font-size: 1.4rem; }
       .carousel-slide img { height: 130px; }
+      .flag-image-wrapper img { width: 100px; }
       .input-area label { font-size: 0.9rem; }
     }
     @media (min-width: 768px) {
@@ -618,7 +531,7 @@
       .video-wrapper video { max-height: 440px; }
     }
 
-    /* ─── CONFETTI / FLOATING PARTICLES ─── */
+    /* ─── CONFETTI ─── */
     #confetti-container {
       position: fixed;
       top: 0;
@@ -638,9 +551,7 @@
       border-radius: 2px;
       animation: fall linear infinite;
     }
-    .confetti-piece:nth-child(odd) {
-      border-radius: 50%;
-    }
+    .confetti-piece:nth-child(odd) { border-radius: 50%; }
     @keyframes fall {
       0% { transform: translateY(-10vh) rotate(0deg); opacity: 0.9; }
       100% { transform: translateY(110vh) rotate(720deg); opacity: 0.2; }
@@ -672,20 +583,14 @@
       </div>
     </div>
 
-    <!-- ═══ PAKISTAN FLAG VIDEO (replaces the static animated flag) ═══ -->
-    <div class="flag-video-wrapper">
-      <video autoplay muted loop playsinline>
-        <!-- 👇 Make sure your flag video is named 'pakistan-flag.mp4' inside the 'images/' folder -->
-        <source src="images/pakistan-flag.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+    <!-- ═══ STATIC FLAG IMAGE ═══ -->
+    <div class="flag-image-wrapper">
+      <img src="images/flag.jfif" alt="Pakistan Flag" />
     </div>
 
     <!-- Central Wish -->
     <div class="hero-wish">
-      <h1>
-        🇵🇰 Happy <span class="dark-blue">Independence</span> Day! 🇵🇰
-      </h1>
+      <h1>🇵🇰 Happy <span class="dark-blue">Independence</span> Day! 🇵🇰</h1>
       <div class="sub-wish">✨ May your heart always beat for Pakistan ✨</div>
     </div>
 
@@ -716,11 +621,11 @@
       <button id="nextBtn">›</button>
     </div>
 
-    <!-- VIDEO -->
+    <!-- ─── VIDEO (your school memories – will autoplay with sound) ─── -->
     <div class="video-section">
       <h3>📹 School Memories & Background Music</h3>
       <div class="video-wrapper">
-        <video id="bgVideo" autoplay loop playsinline preload="metadata">
+        <video id="bgVideo" loop playsinline preload="metadata">
           <source src="WhatsApp%20Video%202024-08-14%20at%208.25.55%20PM.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
@@ -753,13 +658,11 @@
     </div>
   </div>
 
-  <!-- ═══ PAGE 2: PERSONAL GREETING (with its own background image) ═══ -->
+  <!-- ═══ PAGE 2: PERSONAL GREETING ═══ -->
   <div id="page-greeting" class="page">
     <div class="greeting-page-content">
       <div class="big-icon">🤍پاکستان زندہ باد💚💚</div>
-      <h2>
-        Hello, <span class="greeting-name" id="displayedName">Guest</span>!
-      </h2>
+      <h2>Hello, <span class="greeting-name" id="displayedName">Guest</span>!</h2>
       <div class="greeting-quote">
         <blockquote>
           “Pakistan is not just a piece of land; it is a dream, a promise, and a proud identity for millions.”
@@ -776,7 +679,7 @@
 </div>
 
 <script>
-  // ─── CONFETTI GENERATOR (Blue & Gold Background Animation) ───
+  // ─── CONFETTI GENERATOR (Blue & Gold) ───
   (function createConfetti() {
     const container = document.getElementById('confetti-container');
     const colors = ['#01411c', '#ffffff', '#0a2b5c', '#ffd700', '#b8860b', '#0a7a3a'];
@@ -845,17 +748,32 @@
   carouselWrapper.addEventListener('mouseenter', () => clearInterval(autoInterval));
   carouselWrapper.addEventListener('mouseleave', startAutoSlide);
 
-  // ─── VIDEO AUTOPLAY ───
+  // ─── VIDEO AUTOPLAY WITH SOUND ───
   const video = document.getElementById('bgVideo');
-  video.play().catch(() => {
-    const wrapper = video.closest('.video-wrapper');
-    wrapper.style.cursor = 'pointer';
-    wrapper.addEventListener('click', function playOnce() {
-      video.play().catch(() => {});
-      wrapper.style.cursor = 'default';
-      wrapper.removeEventListener('click', playOnce);
+
+  // Attempt to play with sound as soon as possible
+  function playVideoWithSound() {
+    video.muted = false;
+    video.play().catch(() => {
+      // If autoplay is blocked, add a single click handler to the whole page
+      document.addEventListener('click', function playOnce() {
+        video.muted = false;
+        video.play().catch(() => {});
+        document.removeEventListener('click', playOnce);
+      }, { once: true });
     });
-  });
+  }
+
+  // Try to play on load
+  window.addEventListener('load', playVideoWithSound);
+
+  // Also try on first user interaction (click/tap anywhere) if not started
+  document.addEventListener('click', function() {
+    if (video.paused) {
+      video.muted = false;
+      video.play().catch(() => {});
+    }
+  }, { once: true });
 
   // ─── PAGE SWITCHING ───
   const nameInput = document.getElementById('nameInput');
